@@ -22,3 +22,14 @@ El firewall de aplicaciones web (WAF) ofrece una protección centralizada a las 
 El firewall de aplicaciones web se basa en un conjunto de reglas básicas, las cuales pueden ser variadas como OWASP ModSecurity Core Rule Set y complementarse por medio de CrowdSec.
 
 El modo de operación del WAF, es envolver la aplicación web y redirigir los pedidos sanitizados hacia ella.
+
+## Propuesta
+
+Se propone utilizar el software Nginx, es de código abierto y utilizado en sistemas linux como servidor web o como proxy reverso para reenviar mensajes de registro en una red. Apoyándose en **modSecurity** y **CrowdSec**.
+
+modSecurity™ es un firewall de aplicaciones Web embebible que ejecuta como módulo del servidor web, provee protección contra diversos ataques hacia aplicaciones Web y permite monitorizar tráfico HTTP, así como realizar análisis en tiempo real sin necesidad de hacer cambios a la infraestructura existente.
+
+CrowdSec es un IPS colaborativo y de código abierto. Analice comportamientos, responda a ataques y recibe señales de detección de fuentes cloud comunitarias.
+
+modSecurity se integra en Nginx para que este pueda tomar las determinaciones necesarias.
+
