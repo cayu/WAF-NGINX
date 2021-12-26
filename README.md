@@ -47,8 +47,9 @@ Se debe determinar y testear
 - Casos de prueba de las aplicaciones afectadas en cuestión
 - Dimensionamiento de recursos
 
-### Repositorios relacionados
+### Referencias relacionadas
 
 - https://github.com/SpiderLabs/ModSecurity-nginx
 - https://github.com/coreruleset/coreruleset
+- https://www.tecmint.com/install-modsecurity-nginx-debian-ubuntu/
 
