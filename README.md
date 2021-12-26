@@ -46,3 +46,9 @@ Se debe determinar y testear
 - Utilización de certificados SSL 
 - Casos de prueba de las aplicaciones afectadas en cuestión
 - Dimensionamiento de recursos
+
+### Repositorios relacionados
+
+- https://github.com/SpiderLabs/ModSecurity-nginx
+- https://github.com/coreruleset/coreruleset
+
