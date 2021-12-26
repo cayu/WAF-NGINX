@@ -33,3 +33,16 @@ CrowdSec es un IPS colaborativo y de código abierto. Analice comportamientos, r
 
 modSecurity se integra en Nginx para que este pueda tomar las determinaciones necesarias.
 
+Por otro lado CrowdSec corre por fuera de Nginx, sirviendo de apoyo.
+
+- CrowdSec se instalará con opciones básicas de análisis de eventos, en primera instancia como monitoreo y luego se implementarán bloqueos.
+- ModSecurity se instalará con las configuraciones de OWASP ModSecurity Core Rule Set.
+
+### Requerimientos e implementación
+
+Dependiendo del tráfico del sitio web, los requerimientos pueden variar.
+
+Se debe determinar y testear 
+- Utilización de certificados SSL 
+- Casos de prueba de las aplicaciones afectadas en cuestión
+- Dimensionamiento de recursos
