@@ -49,7 +49,15 @@ Se debe determinar y testear
 
 ### Referencias relacionadas
 
+## Proyectos
+
+- https://crowdsec.net/
 - https://github.com/SpiderLabs/ModSecurity-nginx
 - https://github.com/coreruleset/coreruleset
 - https://www.tecmint.com/install-modsecurity-nginx-debian-ubuntu/
+
+## Reportes
+
+- https://github.com/molu8bits/modsecurity-parser
+- https://app.crowdsec.net/
 
