@@ -40,11 +40,12 @@ Por otro lado CrowdSec corre por fuera de Nginx, sirviendo de apoyo.
 
 ### Requerimientos e implementación
 
-Dependiendo del tráfico del sitio web, los requerimientos pueden variar.
+Dependiendo del tráfico del sitio web, los requerimientos pueden variar, así que hay que determinar los requisitos normales de un proxy reverso con NGINX y sus módulos necesarios para luego sumarles los requisitos de procesamientos de solicitudes de tráfico HTTP/HTTPS por medio de  **modSecurity** y **CrowdSec**.
 
 Se debe determinar y testear 
 - Utilización de certificados SSL 
 - Casos de prueba de las aplicaciones afectadas en cuestión
+   - Correr aplicaciones de testeo de seguridad com OpenVAS, Nikto, Nmap+NSE,wpscan etc
 - Dimensionamiento de recursos
 
 ### Referencias relacionadas
