@@ -46,7 +46,7 @@ Se debe determinar y testear
 - Utilización de certificados SSL 
 - Casos de prueba de las aplicaciones afectadas en cuestión
    - Correr aplicaciones de testeo de seguridad com OpenVAS, Nikto, Nmap+NSE,wpscan etc
-- Dimensionamiento de recursos
+- Dimensionamiento de recursos en base a las estadisticas de utilización del servidor
 
 ### Referencias relacionadas
 
