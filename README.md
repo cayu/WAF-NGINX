@@ -23,6 +23,9 @@ El firewall de aplicaciones web se basa en un conjunto de reglas básicas, las c
 
 El modo de operación del WAF, es envolver la aplicación web y redirigir los pedidos sanitizados hacia ella.
 
+![Modo de operación WAF](images/WAF.jpg)
+
+
 ## Propuesta
 
 Se propone utilizar el software Nginx, es de código abierto y utilizado en sistemas linux como servidor web o como proxy reverso para reenviar mensajes de registro en una red. Apoyándose en **modSecurity** y **CrowdSec**.
