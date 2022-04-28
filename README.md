@@ -8,6 +8,7 @@ Configuración simple de WAF para servir sitios web y API's
     - 1.2 Generalidades de un firewall de aplicaciones web
 - 2 Propuesta
     - 2.1 Requerimientos e implementación
+    - 2.2 Instalación
 
 ## Introducción y objetivos
 
@@ -50,6 +51,195 @@ Se debe determinar y testear
 - Casos de prueba de las aplicaciones afectadas en cuestión
    - Correr aplicaciones de testeo de seguridad com OpenVAS, Nikto, Nmap+NSE,wpscan etc
 - Dimensionamiento de recursos en base a las estadisticas de utilización del servidor
+
+### Instalación
+
+```
+$ sudo apt update
+```
+
+```
+$ sudo apt install make gcc build-essential autoconf automake libtool libfuzzy-dev ssdeep gettext pkg-config libcurl4-openssl-dev liblua5.3-dev libpcre3 libpcre3-dev libxml2 libxml2-dev libyajl-dev doxygen libcurl4 libgeoip-dev libssl-dev zlib1g-dev libxslt-dev liblmdb-dev libpcre++-dev libgd-dev
+```
+
+```
+$ sudo apt install nginx-core nginx-common nginx nginx-full
+```
+
+```
+$ sudo mkdir -p /usr/local/src/nginx 
+```
+
+```
+$ sudo chown username:username -R /usr/local/src/
+```
+
+```
+$ cd /usr/local/src/nginx 
+```
+
+```
+$ sudo apt source nginx
+```
+
+```
+$ sudo apt install libmodsecurity3
+```
+
+```
+$ git clone --depth 1 -b v3/master --single-branch https://github.com/SpiderLabs/ModSecurity /usr/local/src/ModSecurity/
+```
+
+```
+$ cd /usr/local/src/ModSecurity/
+```
+
+```
+$ sudo git submodule init
+$ sudo git submodule update
+```
+
+```
+$ sudo ./build.sh 
+$ sudo ./configure
+```
+
+```
+$ sudo make -j4
+```
+
+```
+$ sudo make install
+```
+
+```
+$ git clone --depth 1 https://github.com/SpiderLabs/ModSecurity-nginx.git /usr/local/src/ModSecurity-nginx/
+```
+
+```
+$ cd /usr/local/src/nginx/nginx-1.x/
+```
+
+```
+$ sudo apt build-dep nginx
+$ sudo apt install uuid-dev
+```
+
+```
+$ sudo ./configure --with-compat --add-dynamic-module=/usr/local/src/ModSecurity-nginx
+```
+
+```
+$ sudo make modules
+```
+
+```
+$ sudo cp objs/ngx_http_modsecurity_module.so /usr/share/nginx/modules/
+```
+
+```
+$ sudo vim /etc/nginx/nginx.conf
+```
+
+```
+load_module modules/ngx_http_modsecurity_module.so;
+```
+
+```
+modsecurity on;
+modsecurity_rules_file /etc/nginx/modsec/main.conf;
+```
+
+```
+$ sudo mkdir /etc/nginx/modsec/
+```
+
+```
+$ sudo cp /usr/local/src/ModSecurity/modsecurity.conf-recommended /etc/nginx/modsec/modsecurity.conf
+```
+
+```
+$ sudo vim /etc/nginx/modsec/modsecurity.conf
+```
+
+```
+SecRuleEngine DetectionOnly
+```
+
+```
+SecRuleEngine On
+```
+
+```
+$ sudo vim  /etc/nginx/modsec/main.conf
+```
+
+```
+Include /etc/nginx/modsec/modsecurity.conf
+```
+
+```
+$ sudo cp /usr/local/src/ModSecurity/unicode.mapping /etc/nginx/modsec/
+```
+
+```
+$ sudo nginx -t
+```
+
+```
+$ sudo systemctl restart nginx
+```
+
+```
+$ sudo systemctl status nginx
+```
+
+```
+$ wget https://github.com/coreruleset/coreruleset/archive/v3.3.0.tar.gz
+```
+
+```
+$ tar xvf v3.3.0.tar.gz
+```
+
+```
+$ sudo mv coreruleset-3.3.0/ /etc/nginx/modsec/
+```
+
+```
+$ sudo mv /etc/nginx/modsec/coreruleset-3.3.0/crs-setup.conf.example /etc/nginx/modsec/coreruleset-3.3.0/crs-setup.conf
+```
+
+```
+$ sudo vim /etc/nginx/modsec/main.conf
+```
+
+```
+Include /etc/nginx/modsec/coreruleset-3.3.0/crs-setup.conf
+Include /etc/nginx/modsec/coreruleset-3.3.0/rules/*.conf
+```
+
+```
+$ sudo systemctl restart nginx
+```
+
+```
+$ sudo vim /etc/nginx/modsec/modsecurity.conf
+```
+
+```
+SecRule ARGS:testparam "@contains test" "id:254,deny,status:403,msg:'Test Successful'"
+```
+
+```
+$ sudo systemctl restart nginx
+```
+
+```
+$ cat /var/log/nginx/error.log | grep "Test Successful"
+```
+
+
 
 ### Referencias relacionadas
 
