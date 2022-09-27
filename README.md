@@ -26,6 +26,9 @@ El modo de operación del WAF, es envolver la aplicación web y redirigir los pe
 
 ![Modo de operación WAF](images/WAF.jpg)
 
+### Generalidades de un API Gateway
+
+Un API Gateway gestiona todas las tareas relacionadas con la aceptación y procesamiento llamadas simultáneas a las APIs. Estas tareas pueden incluir la administración del tráfico, el control de la autorización y el acceso, el monitoreo y la administración de versiones de la API.
 
 ## Propuesta
 
