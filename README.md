@@ -55,7 +55,42 @@ Se debe determinar y testear
    - Correr aplicaciones de testeo de seguridad com OpenVAS, Nikto, Nmap+NSE,wpscan etc
 - Dimensionamiento de recursos en base a las estadisticas de utilización del servidor
 
-### Instalación
+### Tareas administrativas de implementación
+
+#### Primer etapa - Instalación
+
+En base a una previa determinación de recursos, realizar las siguientes tareas: 
+
+- Instalación de Sistema Operativo
+    - Instalación Crowdsec
+    - Instalación modSecurity
+- Configuración del servicio
+- Puesta en marcha
+
+#### Segunda etapa - Definir roles operativos
+
+- Definir tareas administrativas para su mantenimiento
+- Definir responsables
+- Determinar monitoreos para poder tener un Capacity planning
+
+### Tercer etapa - Testeo
+
+- Verificar correcto funcionamiento de las aplicaciones Web
+- Intercambiar datos con usuarios clave
+- Simular scaneos y ataques automatizados
+- Verificar reportes de ataques recibios en etapa de pruebas
+
+### Cuarta etapa - Go Live!
+
+- Documento final y presentación de funcionamiento
+- Determinar ahorro y compliance con normas aplicables
+- Revisión de un informe preliminar de funcionamiento de toda la primer semana
+- Revisión DNS y reglas de firewall
+- Salida en productivo
+
+### Implementación técnica
+
+#### Instalación
 
 ```
 $ sudo apt update
