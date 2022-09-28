@@ -26,9 +26,45 @@ El modo de operación del WAF, es envolver la aplicación web y redirigir los pe
 
 ![Modo de operación WAF](images/WAF.jpg)
 
-### Generalidades de un API Gateway
+### Agregando la funcionalidad de API Gateway
 
-Un API Gateway gestiona todas las tareas relacionadas con la aceptación y procesamiento llamadas simultáneas a las APIs. Estas tareas pueden incluir la administración del tráfico, el control de la autorización y el acceso, el monitoreo y la administración de versiones de la API.
+Un API Gateway gestiona todas las tareas relacionadas con la aceptación y procesamiento llamadas simultáneas a las APIs. Estas tareas pueden incluir la administración del tráfico, el control de la autorización y el acceso, el monitoreo y la administración de versiones de la API. Actúa como un punto de entrada único a todo el sistema. Todas las solicitudes de los clientes pasan primero por el API Gateway, luego este deriva las solicitudes al servicio o endpoint apropiado.
+
+Una de las principales ventajas es que este encapsula la estructura interna de las servicios. Los clientes hablan con el API Gateway y este proporciona a cada tipo de cliente una API específica.
+
+#### Generalidades de un API Gateway
+
+Un API Gateway nos ayuda a resolver fácilmente cuestiones como:
+
+- Habilitar autenticación para un endpoint
+- Publicar un endpoint con un certificado SSL
+- Reescritura avanzada de URI
+- Limitar el consumo de un endpoint (rate limit)
+
+Es importante establecer un proceso de actualización o publicación de nuevos servicios lo más rápido o automatizado posible.
+
+### Puntos a determinar
+
+En base a un plan de necesitades, determinar un dimensionamiento del API Gateway, teniendo en cuenta los siguientes puntos principales.
+
+- Autenticación y autorizaciones
+- Administración de certificados
+- Re escritura de rutas - URI
+- Manejo de errores
+- Cache, buffers y transferencias de datos
+- Definir los servicios o microservicios a exponer
+- Definir los endpoint que consumiran las API
+- Definir un consumo aceptable de los datos
+- Establecer sistema de registro de datos de monitoreo y nivel de detalle de dichos datos
+
+Comno buena práctica definir el consumo de servicios a nivel proceso y a nivel técnico. A nivel proceso se determina el flujo correcto publicación y consumo de servicios. A nivel técnico se establecen mejores prácticas para dicho consumo.
+
+Ejemplo de consumo del dato :
+
+```
+curl -ik --header "apikey:/ZkKxb0WYcqS8DRgn+e0aw==" --request GET  https://cursos.io/api/coursesstore/catalog/courses
+```
+
 
 ## Propuesta
 
