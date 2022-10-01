@@ -57,7 +57,7 @@ En base a un plan de necesitades, determinar un dimensionamiento del API Gateway
 - Definir un consumo aceptable de los datos
 - Establecer sistema de registro de datos de monitoreo y nivel de detalle de dichos datos
 
-Comno buena práctica definir el consumo de servicios a nivel proceso y a nivel técnico. A nivel proceso se determina el flujo correcto publicación y consumo de servicios. A nivel técnico se establecen mejores prácticas para dicho consumo.
+Como buena práctica definir el consumo de servicios a nivel proceso y a nivel técnico. A nivel proceso se determina el flujo correcto publicación y consumo de servicios. A nivel técnico se establecen mejores prácticas para dicho consumo.
 
 Ejemplo de consumo del dato :
 
