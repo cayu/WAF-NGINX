@@ -323,6 +323,14 @@ curl -s https://packagecloud.io/install/repositories/crowdsec/crowdsec/script.de
 apt install crowdsec
 ```
 
+```
+cscli collections install crowdsecurity/base-http-scenarios
+cscli collections install crowdsecurity/http-cve
+cscli collections install crowdsecurity/linux-lpe
+cscli collections install crowdsecurity/modsecurity
+cscli collections install crowdsecurity/nginx
+```
+
 ### Referencias relacionadas
 
 ## Proyectos
