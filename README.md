@@ -331,6 +331,10 @@ cscli collections install crowdsecurity/modsecurity
 cscli collections install crowdsecurity/nginx
 ```
 
+```
+apt-get install crowdsec-nginx-bouncer
+```
+
 ### Referencias relacionadas
 
 ## Proyectos
