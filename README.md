@@ -126,7 +126,7 @@ En base a una previa determinación de recursos, realizar las siguientes tareas:
 
 ### Implementación técnica
 
-#### Instalación
+#### Instalación modSecurity™
 
 ```
 $ sudo apt update
@@ -313,7 +313,15 @@ $ sudo systemctl restart nginx
 $ cat /var/log/nginx/error.log | grep "Test Successful"
 ```
 
+#### Instalación CrowdSec
 
+```
+curl -s https://packagecloud.io/install/repositories/crowdsec/crowdsec/script.deb.sh | sudo bash
+```
+
+```
+apt install crowdsec
+```
 
 ### Referencias relacionadas
 
