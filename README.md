@@ -12,7 +12,7 @@ Configuración simple de WAF para servir sitios web y API's
 
 ## Introducción y objetivos
 
-Existe la necesidad de proveer de seguridad a aplicaciones web legadas las cuales no pueden ser actualizadas por motivos técnicos. Ante la imposibilidad de realizar cambios en el servidor de la aplicación y no poder realizar un desarrollo posterior sobre la misma, la propuesta es implementar un **WAF**.
+Debido a la deficiente seguridad en la detección y prevención de ataques más comunes a las aplicaciones web. Existe la necesidad de proveer de seguridad a aplicaciones web legadas las cuales no pueden ser actualizadas por motivos técnicos. Ante la imposibilidad de realizar cambios en el servidor de la aplicación y no poder realizar un desarrollo posterior sobre la misma, la propuesta es implementar una herramienta que funcione como proxy reverso que sea capaz de detectar y prevenir los riesgos más críticos en aplicaciones web funcionando como un **WAF**.
 
 Un firewall de aplicaciones web (WAF) es un tipo de firewall que supervisa, filtra o bloquea el tráfico HTTP hacia y desde una aplicación web. Al inspeccionar el tráfico HTTP un WAF protege a las aplicaciones web contra ataques como los de inyección SQL, XSS y falsificación de petición de sitios cruzados (CSRF).
 
