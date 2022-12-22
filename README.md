@@ -368,6 +368,11 @@ server {
     	return 404; # managed by Certbot
 }
 ```
+#### Adicionar certificado SSL por medio de Let's Encrypt
+
+```
+certbot certonly -d subdominio.dominio.com
+```
 
 ### Referencias relacionadas
 
