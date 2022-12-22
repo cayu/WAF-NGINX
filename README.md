@@ -339,33 +339,25 @@ apt-get install crowdsec-nginx-bouncer
 
 ```
 server {
-
-        root /var/www/html;
-
-        index index.html index.htm index.nginx-debian.html;
-        server_name subdominio.dominio.com;
-
-        location / {
-		proxy_pass http://subdominio.dominiointerno.com;
-        }
-
-	listen [::]:443 ssl ipv6only=on;
-	listen 443 ssl;
-	ssl_certificate /etc/letsencrypt/live/subdominio.dominio.com/fullchain.pem;
-	ssl_certificate_key /etc/letsencrypt/live/subdominio.dominio.com/privkey.pem;
-	include /etc/letsencrypt/options-ssl-nginx.conf;
-	ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
-
+    location / {
+	proxy_pass http://subdominio.dominiointerno.com;
+    }
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/subdominio.dominio.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/subdominio.dominio.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+    server_name subdominio.dominio.com;
 }
-server {
-    	if ($host = subdominio.dominio.com) {
-        	return 301 https://$host$request_uri;
-	}
 
-        listen 80 ;
-        listen [::]:80 ;
-	server_name subdominio.dominio.com;
-    	return 404; # managed by Certbot
+server {
+    if ($host = subdominio.dominio.com) {
+        return 301 https://$host$request_uri;
+    }
+
+    listen 80 ;
+    server_name subdominio.dominio.com;
+    return 404;
 }
 ```
 #### Adicionar certificado SSL por medio de Let's Encrypt
