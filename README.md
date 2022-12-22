@@ -360,6 +360,10 @@ server {
     return 404;
 }
 ```
+Habilitación del sitio :
+```
+# ln -s /etc/nginx/sites-available/subdominio.dominio.com /etc/nginx/sites-enabled
+```
 #### Adicionar certificado SSL por medio de Let's Encrypt
 
 ```
