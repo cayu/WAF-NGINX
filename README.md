@@ -9,6 +9,7 @@ Configuración simple de WAF para servir sitios web y API's
 - 2 Propuesta
     - 2.1 Requerimientos e implementación
     - 2.2 Instalación
+    - 2.3 Alta disponibilidad
 
 ## Introducción y objetivos
 
@@ -369,6 +370,47 @@ Habilitación del sitio :
 ```
 certbot certonly -d subdominio.dominio.com
 ```
+
+### Alta disponibilidad
+
+La infraestructura de alta diposnibilidad se implementará por medio del protocolo VRRP (Virtual Router Redundancy Protocol), haciendo uso del paquete Keepalived.
+
+#### Nodo1 /etc/keepalived/keepalived.conf
+```
+vrrp_instance VI_1 {
+        state BACKUP
+        interface ens18
+        virtual_router_id 51
+        priority 254
+        advert_int 1
+        authentication {
+              auth_type PASS
+              auth_pass 12345
+        }
+        virtual_ipaddress {
+              192.168.2.240/24
+        }
+}
+```
+
+#### Nodo2 /etc/keepalived/keepalived.conf
+```
+vrrp_instance VI_1 {
+        state BACKUP
+        interface ens18
+        virtual_router_id 51
+        priority 254
+        advert_int 1
+        authentication {
+              auth_type PASS
+              auth_pass 12345
+        }
+        virtual_ipaddress {
+              192.168.2.240/24
+        }
+}
+```
+
 
 ### Referencias relacionadas
 
