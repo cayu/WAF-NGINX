@@ -373,7 +373,7 @@ certbot certonly -d subdominio.dominio.com
 
 ### Alta disponibilidad
 
-La infraestructura de alta diposnibilidad se implementará por medio del protocolo VRRP (Virtual Router Redundancy Protocol), haciendo uso del paquete Keepalived.
+La infraestructura de alta disponibilidad se implementará por medio del protocolo VRRP (Virtual Router Redundancy Protocol), haciendo uso del paquete Keepalived.
 
 ![Modo de operación Keepalived](images/NGINX+WAF+keepalived.jpg)
 
