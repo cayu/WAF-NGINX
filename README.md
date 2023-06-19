@@ -21,9 +21,9 @@ Un firewall de aplicaciones web (WAF) es un tipo de firewall que supervisa, filt
 
 El firewall de aplicaciones web (WAF) ofrece una protección centralizada a las aplicaciones web contra vulnerabilidades de seguridad comunes. Las aplicaciones web son cada vez más el objetivo de ataques malintencionados que aprovechan vulnerabilidades habitualmente conocidas. Los scripts entre sitios y las inyecciones de código SQL están dentro de los ataques más comunes.
 
-El firewall de aplicaciones web se basa en un conjunto de reglas básicas, las cuales pueden ser variadas como OWASP ModSecurity Core Rule Set y complementarse por medio de CrowdSec.
+El firewall de aplicaciones web propuesto se basa en un conjunto de reglas básicas, las cuales pueden ser variadas como OWASP ModSecurity Core Rule Set y complementarse por medio de CrowdSec.
 
-El modo de operación del WAF, es envolver la aplicación web y redirigir los pedidos sanitizados hacia ella.
+El modo de operación del WAF, es envolver la aplicación web y redirigir los pedidos sanos hacia ella y a su vez denegar los pedidos malformados o maliciosos.
 
 ![Modo de operación WAF](images/WAF.jpg)
 
