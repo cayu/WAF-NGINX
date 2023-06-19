@@ -9,7 +9,8 @@ Configuración simple de WAF para servir sitios web y API's
 - 2 Propuesta
     - 2.1 Requerimientos e implementación
     - 2.2 Instalación
-    - 2.3 Alta disponibilidad
+    - 2.3 Dashboard
+    - 2.4 Alta disponibilidad
 
 ## Introducción y objetivos
 
@@ -370,6 +371,9 @@ Habilitación del sitio :
 ```
 certbot certonly -d subdominio.dominio.com
 ```
+
+### Dashboard
+Podemos implementar diferentes tipos de dashboards (tableros de control), para darle una mirada rápida a las estadísticas del servicio y ver mejor qué se necesita mejorar o arreglar de manera visual.
 
 ### Alta disponibilidad
 
