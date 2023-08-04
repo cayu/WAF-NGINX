@@ -271,19 +271,19 @@ $ sudo systemctl status nginx
 ```
 
 ```
-$ wget https://github.com/coreruleset/coreruleset/archive/v3.3.4.tar.gz
+$ wget https://github.com/coreruleset/coreruleset/archive/v3.3.5.tar.gz
 ```
 
 ```
-$ tar xvf v3.3.4.tar.gz
+$ tar xvf v3.3.5.tar.gz
 ```
 
 ```
-$ sudo mv coreruleset-3.3.4/ /etc/nginx/modsec/
+$ sudo mv coreruleset-3.3.5/ /etc/nginx/modsec/
 ```
 
 ```
-$ sudo mv /etc/nginx/modsec/coreruleset-3.3.4/crs-setup.conf.example /etc/nginx/modsec/coreruleset-3.3.4/crs-setup.conf
+$ sudo mv /etc/nginx/modsec/coreruleset-3.3.5/crs-setup.conf.example /etc/nginx/modsec/coreruleset-3.3.5/crs-setup.conf
 ```
 
 ```
@@ -291,8 +291,8 @@ $ sudo vim /etc/nginx/modsec/main.conf
 ```
 
 ```
-Include /etc/nginx/modsec/coreruleset-3.3.4/crs-setup.conf
-Include /etc/nginx/modsec/coreruleset-3.3.4/rules/*.conf
+Include /etc/nginx/modsec/coreruleset-3.3.5/crs-setup.conf
+Include /etc/nginx/modsec/coreruleset-3.3.5/rules/*.conf
 ```
 
 ```
