@@ -384,10 +384,10 @@ La infraestructura de alta disponibilidad se implementará por medio del protoco
 #### Nodo1 /etc/keepalived/keepalived.conf
 ```
 vrrp_instance VI_1 {
-        state BACKUP
+        state MASTER
         interface ens18
         virtual_router_id 51
-        priority 254
+        priority 255
         advert_int 1
         authentication {
               auth_type PASS
