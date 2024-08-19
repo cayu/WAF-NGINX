@@ -138,7 +138,6 @@ $ sudo apt install nginx-core nginx-common nginx nginx-full libmodsecurity3 libn
 $ sudo apt update
 ```
 
-```
 
 ```
 modsecurity on;
