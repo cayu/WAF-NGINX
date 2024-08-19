@@ -128,97 +128,16 @@ En base a una previa determinación de recursos, realizar las siguientes tareas:
 
 ### Implementación técnica
 
+´´´
+$ sudo apt install nginx-core nginx-common nginx nginx-full libmodsecurity3 libnginx-mod-http-modsecurity modsecurity-crs
+´´´
+
 #### Instalación modSecurity™
 
 ```
 $ sudo apt update
 ```
 
-```
-$ sudo apt install make gcc build-essential autoconf automake libtool libfuzzy-dev ssdeep gettext pkg-config libcurl4-openssl-dev liblua5.3-dev libpcre3 libpcre3-dev libxml2 libxml2-dev libyajl-dev doxygen libcurl4 libgeoip-dev libssl-dev zlib1g-dev libxslt-dev liblmdb-dev libpcre++-dev libgd-dev
-```
-
-```
-$ sudo apt install nginx-core nginx-common nginx nginx-full
-```
-
-```
-$ sudo mkdir -p /usr/local/src/nginx 
-```
-
-```
-$ sudo chown username:username -R /usr/local/src/
-```
-
-```
-$ cd /usr/local/src/nginx 
-```
-
-```
-$ sudo apt source nginx
-```
-
-```
-$ sudo apt install libmodsecurity3
-```
-
-```
-$ git clone --depth 1 -b v3/master --single-branch https://github.com/SpiderLabs/ModSecurity /usr/local/src/ModSecurity/
-```
-
-```
-$ cd /usr/local/src/ModSecurity/
-```
-
-```
-$ sudo git submodule init
-$ sudo git submodule update
-```
-
-```
-$ sudo ./build.sh 
-$ sudo ./configure
-```
-
-```
-$ sudo make -j4
-```
-
-```
-$ sudo make install
-```
-
-```
-$ git clone --depth 1 https://github.com/SpiderLabs/ModSecurity-nginx.git /usr/local/src/ModSecurity-nginx/
-```
-
-```
-$ cd /usr/local/src/nginx/nginx-1.x/
-```
-
-```
-$ sudo apt build-dep nginx
-$ sudo apt install uuid-dev
-```
-
-```
-$ sudo ./configure --with-compat --add-dynamic-module=/usr/local/src/ModSecurity-nginx
-```
-
-```
-$ sudo make modules
-```
-
-```
-$ sudo cp objs/ngx_http_modsecurity_module.so /usr/share/nginx/modules/
-```
-
-```
-$ sudo vim /etc/nginx/nginx.conf
-```
-
-```
-load_module modules/ngx_http_modsecurity_module.so;
 ```
 
 ```
