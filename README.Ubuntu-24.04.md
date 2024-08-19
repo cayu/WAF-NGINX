@@ -128,9 +128,9 @@ En base a una previa determinación de recursos, realizar las siguientes tareas:
 
 ### Implementación técnica
 
-´´´
+```
 $ sudo apt install nginx-core nginx-common nginx nginx-full libmodsecurity3 libnginx-mod-http-modsecurity modsecurity-crs
-´´´
+```
 
 #### Instalación modSecurity™
 
