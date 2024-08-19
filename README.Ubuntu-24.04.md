@@ -153,7 +153,7 @@ $ sudo cp /usr/local/src/ModSecurity/modsecurity.conf-recommended /etc/nginx/mod
 ```
 
 ```
-$ sudo vim /etc/nginx/modsec/modsecurity.conf
+$ sudo nano /etc/nginx/modsec/modsecurity.conf
 ```
 
 ```
@@ -165,7 +165,7 @@ SecRuleEngine On
 ```
 
 ```
-$ sudo vim  /etc/nginx/modsec/main.conf
+$ sudo nano  /etc/nginx/modsec/main.conf
 ```
 
 ```
@@ -189,28 +189,14 @@ $ sudo systemctl status nginx
 ```
 
 ```
-$ wget https://github.com/coreruleset/coreruleset/archive/v3.3.5.tar.gz
+$ sudo nano /usr/share/modsecurity-crs/owasp-crs.load
 ```
 
 ```
-$ tar xvf v3.3.5.tar.gz
-```
-
-```
-$ sudo mv coreruleset-3.3.5/ /etc/nginx/modsec/
-```
-
-```
-$ sudo mv /etc/nginx/modsec/coreruleset-3.3.5/crs-setup.conf.example /etc/nginx/modsec/coreruleset-3.3.5/crs-setup.conf
-```
-
-```
-$ sudo vim /etc/nginx/modsec/main.conf
-```
-
-```
-Include /etc/nginx/modsec/coreruleset-3.3.5/crs-setup.conf
-Include /etc/nginx/modsec/coreruleset-3.3.5/rules/*.conf
+Include /etc/modsecurity/crs/crs-setup.conf
+IncludeOptional /etc/modsecurity/crs/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf
+Include /usr/share/modsecurity-crs/rules/*.conf
+IncludeOptional /etc/modsecurity/crs/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf
 ```
 
 ```
@@ -218,7 +204,7 @@ $ sudo systemctl restart nginx
 ```
 
 ```
-$ sudo vim /etc/nginx/modsec/modsecurity.conf
+$ sudo nano /etc/nginx/modsecurity.conf
 ```
 
 ```
