@@ -135,45 +135,8 @@ $ sudo apt install nginx-core nginx-common nginx nginx-full libmodsecurity3t64 l
 #### Instalación modSecurity™
 
 ```
-$ sudo apt update
-```
-
-
-```
 modsecurity on;
-modsecurity_rules_file /etc/nginx/modsec/main.conf;
-```
-
-```
-$ sudo mkdir /etc/nginx/modsec/
-```
-
-```
-$ sudo cp /usr/local/src/ModSecurity/modsecurity.conf-recommended /etc/nginx/modsec/modsecurity.conf
-```
-
-```
-$ sudo nano /etc/nginx/modsec/modsecurity.conf
-```
-
-```
-SecRuleEngine DetectionOnly
-```
-
-```
-SecRuleEngine On
-```
-
-```
-$ sudo nano  /etc/nginx/modsec/main.conf
-```
-
-```
-Include /etc/nginx/modsec/modsecurity.conf
-```
-
-```
-$ sudo cp /usr/local/src/ModSecurity/unicode.mapping /etc/nginx/modsec/
+modsecurity_rules_file /etc/nginx/modsecurity_includes.conf;
 ```
 
 ```
@@ -189,25 +152,11 @@ $ sudo systemctl status nginx
 ```
 
 ```
-$ sudo nano /usr/share/modsecurity-crs/owasp-crs.load
-```
-
-```
-Include /etc/modsecurity/crs/crs-setup.conf
-IncludeOptional /usr/share/modsecurity-crs/rules/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf
-Include /usr/share/modsecurity-crs/rules/*.conf
-IncludeOptional /usr/share/modsecurity-crs/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf
-```
-
-```
-$ sudo systemctl restart nginx
-```
-
-```
 $ sudo nano /etc/nginx/modsecurity.conf
 ```
 
 ```
+SecRuleEngine On
 SecRule ARGS:testparam "@contains test" "id:254,deny,status:403,msg:'Test Successful'"
 ```
 
