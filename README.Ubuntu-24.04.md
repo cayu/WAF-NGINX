@@ -194,9 +194,9 @@ $ sudo nano /usr/share/modsecurity-crs/owasp-crs.load
 
 ```
 Include /etc/modsecurity/crs/crs-setup.conf
-IncludeOptional /etc/modsecurity/crs/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf
+IncludeOptional /usr/share/modsecurity-crs/rules/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf
 Include /usr/share/modsecurity-crs/rules/*.conf
-IncludeOptional /etc/modsecurity/crs/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf
+IncludeOptional /usr/share/modsecurity-crs/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf
 ```
 
 ```
