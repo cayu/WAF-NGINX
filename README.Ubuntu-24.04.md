@@ -184,6 +184,8 @@ cscli collections install crowdsecurity/http-cve
 cscli collections install crowdsecurity/linux-lpe
 cscli collections install crowdsecurity/modsecurity
 cscli collections install crowdsecurity/nginx
+
+cscli console enable context
 ```
 
 ```
