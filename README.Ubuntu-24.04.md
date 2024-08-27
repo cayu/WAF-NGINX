@@ -171,7 +171,7 @@ $ cat /var/log/nginx/error.log | grep "Test Successful"
 #### Instalación CrowdSec
 
 ```
-curl -s https://packagecloud.io/install/repositories/crowdsec/crowdsec/script.deb.sh | sudo bash
+curl -s https://install.crowdsec.net/ | sh
 ```
 
 ```
